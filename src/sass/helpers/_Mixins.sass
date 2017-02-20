@@ -1,0 +1,46 @@
+@charset "utf-8"
+// 颜色 + 字体 + 变量 + 继承
+@import "./Color"
+@import "./Font"
+@import "./Var"
+@import "./Extend"
+/* 常用混合 */
+
+// px转rem
+=REM( $attr,$size )
+    #{$attr}: ($size/37.5px)*1rem
+// 跨浏览器设置透明度
+=opacity( $opacity )
+    opacity: $opacity
+    $opacity-ie: $opacity * 100
+    filter: alpha(opacity=$opacity-ie)  // IE8
+=w-h( $width, $height )
+    width: $width
+    height: $height
+=REM:W-H( $width, $height )
+    +REM( width, $width )
+    +REM( height, $height )
+// 字体加粗
+=fW( $fontWeight )
+    font-weight: $fontWeight
+// CSS框模型/内边距
+=pB( $paddingBottom )
+    padding-bottom: $paddingBottom
+=pL( $paddingLeft )
+    padding-left: $paddingLeft
+=pR( $paddingRight )
+    padding-right: $paddingRight
+=pT( $paddingTop )
+    padding-top: $paddingTop
+// CSS框模型/外边距
+=mB( $marginBottom )
+    margin-bottom: $marginBottom
+=mL( $marginLeft )
+    margin-left: $marginLeft
+=mR( $marginRight )
+    margin-right: $marginRight
+=mT( $marginTop )
+    margin-top: $marginTop
+// 圆角混合( 接受圆角百分比值 )
+=radius( $color )
+    border-radius: $color
