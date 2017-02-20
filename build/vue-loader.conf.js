@@ -3,7 +3,7 @@ var config = require('../config')
 var isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
-    // loaders: utils.cssLoaders({
+  // loaders: utils.cssLoaders({
     //     sourceMap: isProduction
     //     ? config.build.productionSourceMap
     //     : config.dev.cssSourceMap,
@@ -15,7 +15,7 @@ module.exports = {
     }
     ,postcss: [
         require('autoprefixer')({
-            browsers: ['last 10 versions']
+        browsers: ['last 10 versions']
         })
     ]
 }
