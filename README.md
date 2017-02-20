@@ -6,10 +6,10 @@
 | 技术名称                                                      | 作用           |  版本  |
 | --------                                                      | -----:         | :----:  |
 | [Vuejs](http://cn.vuejs.org/)                                 | 框架            |   2.1.10     |
-| Sass                                                          | 样式预处理器     |  4.1.1  |
-| Webpack                                                       | 模块打包         |  1.13.2  |
-| Babel                                                         | ES6转译ES5      |  6.0.0  |
-| Yarn                                                          | 模块依赖安装     |  0.17.6  |
+| [Sass](http://www.sass-zh.com/)                               | 样式预处理器     |  4.5.0  |
+| [Webpack](http://webpackdoc.com/)                             | 模块打包         |  2.2.1  |
+| [Babel](http://babeljs.cn/)                                   | ES6转译ES5      |  6.22.1 |
+| [Yarn](https://yarn.bootcss.com/)                             | 模块依赖          |  0.17.6  |
 | [Muse UI](https://museui.github.io/#/index)                   | UI框架          |  2.0.0-rc.5  |
 | [Pug](https://pugjs.org/zh-cn/api/getting-started.html)       | Node模版语言    |  2.0.0-beta11  |
 
