@@ -1,12 +1,17 @@
 <template lang="pug">
-    #app
-        img( src="./assets/logo.png" )
-        hello
+#app
+    AppBar
+    Banner
+    MapView
+    FooterBox
 </template>
 
 <script>
-import Hello from './components/Hello'
-const components = { Hello }
+import AppBar       from './components/AppBar'
+import Banner       from './components/Banner'
+import MapView      from './components/MapView'
+import FooterBox    from './components/FooterBox'
+const components = { AppBar, Banner, MapView, FooterBox }
 
 export default {
     name: 'app'
@@ -16,12 +21,8 @@ export default {
 
 <style lang="sass?indentedSyntax" scoped>
 @import './sass/main'
+@import './sass/vendors/_MuseUI.sass'
 
 #app
-    font-family: 'Avenir', Helvetica, Arial, sans-serif
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-    text-align: center
-    color: #2c3e50
-    margin-top: 60px
+    +bC( $C-base )
 </style>

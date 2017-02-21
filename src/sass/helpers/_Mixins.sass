@@ -42,5 +42,16 @@
 =mT( $marginTop )
     margin-top: $marginTop
 // 圆角混合( 接受圆角百分比值 )
-=radius( $color )
-    border-radius: $color
+=radius( $size )
+    border-radius: $size
+// 背景色
+=bC( $backgroundColor )
+    background-color: $backgroundColor
+// 图片等比例缩放
+=imgCover( $size )
+    width: $size
+    object-fit: cover
+=flexCenter
+    display: flex
+    align-items: center
+    justify-content: center
