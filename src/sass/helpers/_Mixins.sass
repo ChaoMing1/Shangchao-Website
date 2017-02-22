@@ -23,6 +23,8 @@
 // 字体加粗
 =fW( $fontWeight )
     font-weight: $fontWeight
+=lH( $lineHeight )
+    line-height: $lineHeight
 // CSS框模型/内边距
 =pB( $paddingBottom )
     padding-bottom: $paddingBottom
@@ -32,6 +34,12 @@
     padding-right: $paddingRight
 =pT( $paddingTop )
     padding-top: $paddingTop
+// 4个padding值全转成REM单位
+=REM-P( $top, $right, $bottom, $left )
+    +REM( padding-top, $top )
+    +REM( padding-right, $right )
+    +REM( padding-bottom, $bottom )
+    +REM( padding-left, $left )
 // CSS框模型/外边距
 =mB( $marginBottom )
     margin-bottom: $marginBottom
@@ -41,6 +49,12 @@
     margin-right: $marginRight
 =mT( $marginTop )
     margin-top: $marginTop
+// 4个margin值全转成REM单位
+=REM-M( $top, $right, $bottom, $left )
+    +REM( margin-top, $top )
+    +REM( margin-right, $right )
+    +REM( margin-bottom, $bottom )
+    +REM( margin-left, $left )
 // 圆角混合( 接受圆角百分比值 )
 =radius( $size )
     border-radius: $size
@@ -51,7 +65,28 @@
 =imgCover( $size )
     width: $size
     object-fit: cover
+// 便捷混合( 无混合, 高频使用属性 )
 =flexCenter
     display: flex
     align-items: center
     justify-content: center
+=textCenter
+    text-align: center
+=REL
+    position: relative
+=ABS
+    position: absolute
+=W100
+    width: 100%
+// 0.5像素边框线混合( 依赖上方部分混合, 所以此混合位置要在最后 )
+=halfString( $color, $width )
+    +REL
+    &::before
+        content: ''
+        +ABS
+        +w-h( $width, $width )
+        border: 1px solid $color
+        border-bottom: none
+        transform-origin: 0 0
+        transform: scale( .5, .5 )
+        box-sizing: border-box

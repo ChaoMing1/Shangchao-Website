@@ -8,3 +8,8 @@
 // 按钮状态 + 统一距离管理( 不同类型边距/填充 )
 @import "./state/BtnState"
 @import "./state/Distance"
+
+// 页面继承
+=moduleBoxStyle
+    +REM-P( $M-padding, $M-margin, $M-padding, $M-margin )
+    @extend %justify
