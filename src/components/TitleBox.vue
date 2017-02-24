@@ -1,6 +1,6 @@
 <template lang="pug">
-.title
-    div
+.title( v-bind:id="title_info.idName" )
+    .warp--title
         h2( v-bind:style = " { color: title_info.title[0].color,display: 'inline-block' } " ) {{ title_info.title[0].text }}
         h2( v-bind:style = " { color: title_info.title[1].color,display: 'inline-block' } " ) {{ title_info.title[1].text }}
         p( v-bind:style = " { color: title_info.subTitle.color } " ) {{ title_info.subTitle.text }}
@@ -22,7 +22,8 @@ export default {
 .title
     +flexCenter
     +textCenter
-    +REM( padding-top, $M-padding )
+    // 方便锚点跳到指定位置, 加高padding-top
+    +REM( padding-top, $M-padding*3 )
     +REM( padding-bottom, $M-padding )
     >div
         +W100
@@ -44,4 +45,9 @@ export default {
                 +REM( height, 1px )
                 border-top: 1px solid $C-text
                 +REM( border-bottom-width, 1px )
+// 容器媒体查询( PC情况下 ) 设置最大宽度
+.title
+    @media only screen and ( min-width : 1180px )
+        .warp--title
+            max-width: 420px
 </style>

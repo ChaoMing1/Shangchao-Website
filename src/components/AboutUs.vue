@@ -35,6 +35,7 @@ export default {
         +REL
         +REM( height, 370px )
         +REM-P( $M-padding, $M-margin, $M-padding, $M-margin )
+    +global-maxWidth
     .AboutUs--img
         @media only screen and ( min-width : 320px )
             >img

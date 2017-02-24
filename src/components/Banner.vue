@@ -1,12 +1,27 @@
 <template lang="pug">
-    .banner
-        .banner--title
-            h2.whileColor 青岛最专业的
-            h2.themeColor 互联网服务公司
-            p.whileColor 上朝信息科技 · 多行业应用产品
-            p.whileColor 满足不同行业需求 · IT解决方案与服务提供商
-            mu-flat-button( label="联系我们" class="demo-flat-button" )
+.banner( v-bind:style=" { backgroundImage: 'url( ' + bannerBcImg + ' )', backgroundSize: 'cover' } " )
+    .banner--title
+        h2.whileColor 青岛最专业的
+        h2.themeColor 互联网服务公司
+        p.whileColor 上朝信息科技 · 多行业应用产品
+        p.whileColor 满足不同行业需求 · IT解决方案与服务提供商
+        mu-flat-button( label="联系我们" class="demo-flat-button" @click="toId( 'contactUs-anchor' )" )
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            bannerBcImg: require('../assets/img/banner.jpg')
+        }
+    }
+    ,methods: {
+        toId( idName ) {
+            location.href = '#' + idName
+        }
+    }
+}
+</script>
 
 <style lang="sass?indentedSyntax" scoped>
 @import '../sass/main'
@@ -28,11 +43,27 @@
             +REM( font-size, $F-text )
             +REM( line-height, $F-sub-bigTitle )
         .demo-flat-button
-            margin: $M-contentMargin 0
-            +REM( height, 40px )
             border: 1px solid $F
-            +radius(50%)
             color: $F
+    @media only screen and ( min-width : 1180px )
+        height: 1024px
+        .banner--title
+            +REL
+            left: inherit
+            bottom: inherit
+            width: 1180px
+            margin: 0 auto
+            padding-top: 26%
+            >h2
+                +fS( $F-title*3 )
+                +lH( $F-title*4 )
+                +fW( inherit )
+            >p
+                +fS( $F-title )
+                +lH( $F-title*2 )
+            >button
+                +ellipseBtn
+                +REM( height, 30px )
 // 公用样式
 .whileColor
     color: $F

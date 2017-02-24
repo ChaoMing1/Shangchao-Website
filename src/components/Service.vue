@@ -1,11 +1,12 @@
 <template lang="pug">
 #Service
     mu-row( gutter )
-        mu-col( v-for=" item in serviceArr " class="serviceBox" width="100" tablet="33" desktop="33" )
+        mu-col( v-for="item in serviceArr" class="serviceBox" width="100" tablet="33" desktop="33" )
             div
                 .imgBox
                     img( v-bind:src=" item.img " )
                 h2 {{ item.title }}
+                .string
                 p( v-bind:style=" { display: 'block' } " ) {{ item.text_A }}
                 p( v-bind:style=" { display: 'block' } " ) {{ item.text_B }}
 </template>
@@ -19,7 +20,7 @@ export default {
                     img     : require('../assets/img/ico-tool-30-px@3x.png')
                     ,title  : '行业解决方案'
                     ,text_A : '技术驱动商业创新'
-                    ,text_B : '研发符合企业需求的产品'
+                    ,text_B : '研发符合企业需求产品'
                 }
                 ,{
                     img     : require('../assets/img/ico-software-30-px@3x.png')
@@ -43,6 +44,9 @@ export default {
 @import '../sass/main'
 
 #Service
+    @media only screen and ( min-width : 1180px )
+        max-width: 1180px
+        margin: 0 auto
     +moduleBoxStyle
     .serviceBox
         +flexCenter
@@ -58,8 +62,14 @@ export default {
                     +imgCover( 100% )
             h2
                 +REM( font-size, $F-title )
-                +REM( margin-top, $M-contentMargin )
+                +REM( padding-top, $M-contentMargin )
+                +REM( padding-bottom, $M-contentMargin )
+            .string
+                @extend %dib
+                width: 30%
+                +REM( height, 2px )
                 +REM( margin-bottom, $M-contentMargin )
+                +bC( $C-theme )
             p
                 +REM( font-size, $F-text )
                 +REM( line-height, $F-title )
