@@ -47,6 +47,9 @@ export default {
     @media only screen and ( min-width : 1180px )
         max-width: 1180px
         margin: 0 auto
+        padding:
+            left: 0
+            right: 0
     +moduleBoxStyle
     .serviceBox
         +flexCenter

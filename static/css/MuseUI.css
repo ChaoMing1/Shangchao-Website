@@ -25,3 +25,6 @@
     color: rgb( 216, 59, 16 ) !important;
     font-weight: bold;
 }
+.moveViewStyle-PC .warp--pc-header span{
+    color: rgb( 51, 51, 51 ) !important;
+}

@@ -138,6 +138,9 @@ export default {
 #JoinUs
     +global-maxWidth
     +moduleBoxStyle
+    padding:
+        left: 0
+        right: 0
     .joinUsBox
         +REM( padding, $M-padding )
         h3

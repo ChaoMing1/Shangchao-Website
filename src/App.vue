@@ -186,10 +186,13 @@ export default {
             window.onscroll = () => {
                 let yValue              = window.scrollY
                 ,mobileAppbar  = document.getElementById('mobile--appbar')
+                ,pcAppBar      = document.getElementById('pc--header')
                 if( yValue == 0 ) {
                     mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1' )
+                    pcAppBar.setAttribute( 'class', 'pc-header' )
                 } else {
                     mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1 moveViewStyle' )
+                    pcAppBar.setAttribute( 'class', 'pc-header moveViewStyle-PC' )
                 }
             }
         }

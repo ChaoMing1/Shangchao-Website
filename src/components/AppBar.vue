@@ -17,7 +17,7 @@
                 mu-list-item( title="招贤纳士"  @click="toId( 'joinUs-anchor' )" )
                 mu-list-item( title="联系我们"  @click="toId( 'contactUs-anchor' )" )
                 mu-list-item( v-if="docked"    @click.native="open = false" title="Close" )
-    .pc-header
+    .pc-header( id="pc--header" )
         .warp--pc-header
             mu-row( gutter )
                 // PC - 左侧
@@ -30,13 +30,13 @@
                 mu-col( class="pc--header--box" desktop="60" )
                     mu-paper
                         mu-bottom-nav( v-bind:value="bottomNav" @change="handleChange" )
-                            mu-bottom-nav-item( value="HOME"        title="HOME"    v-on:click="PCtoId( 'HOME-anchor' )"         )
-                            mu-bottom-nav-item( value="aboutUs"     title="关于我们" v-on:click="PCtoId( 'aboutUs-anchor' )"      )
-                            mu-bottom-nav-item( value="service"     title="服务项目" v-on:click="PCtoId( 'service-anchor' )"      )
-                            mu-bottom-nav-item( value="works"       title="成功案例" v-on:click="PCtoId( 'works-anchor' )"        )
-                            mu-bottom-nav-item( value="team"        title="团队介绍" v-on:click="PCtoId( 'team-anchor' )"         )
-                            mu-bottom-nav-item( value="joinUs"      title="招贤纳士" v-on:click="PCtoId( 'joinUs-anchor' )"       )
-                            mu-bottom-nav-item( value="contactUs"   title="联系我们" v-on:click="PCtoId( 'contactUs-anchor' )"    )
+                            mu-bottom-nav-item( value="HOME-anchor"        title="HOME"       )
+                            mu-bottom-nav-item( value="aboutUs-anchor"     title="关于我们"    )
+                            mu-bottom-nav-item( value="service-anchor"     title="服务项目"    )
+                            mu-bottom-nav-item( value="works-anchor"       title="成功案例"    )
+                            mu-bottom-nav-item( value="team-anchor"        title="团队介绍"    )
+                            mu-bottom-nav-item( value="joinUs-anchor"      title="招贤纳士"    )
+                            mu-bottom-nav-item( value="contactUs-anchor"   title="联系我们"    )
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default {
         return {
             open        : false
             ,docked     : true
-            ,bottomNav  : 'HOME'
+            ,bottomNav  : 'HOME-anchor'
         }
     }
     ,methods: {
@@ -54,15 +54,14 @@ export default {
             this.docked = !flag
         }
         ,toId( idName ) {
-            // console.log(name)
             location.href = '#' + idName
         }
-        ,handleChange (val) {
+        ,handleChange( val ) {
             this.bottomNav = val
+            this.PCtoId( val )
         }
         ,PCtoId( idName ) {
-            console.log( idName )
-            // location.href = '#' + idName
+            location.href = '#' + idName
         }
     }
 }
@@ -124,7 +123,7 @@ export default {
                         +REM-padding-LR( $M-contentMargin )
                         +text-vertical-align( bottom )
                         >span
-                            color: $F !important
+                            color: $F
                     .mu-paper
                         // 导航文字栏背景颜色 设置为透明
                         .mu-bottom-nav
@@ -132,7 +131,7 @@ export default {
                         // 导航栏文字 字体设置
                         .mu-bottom-item-text
                             font-size: 20px !important
-// 移动页面时, 添加改变class 样式
+// 移动页面时, mobile端添加改变class 样式
 .mobile-header
     .moveViewStyle
         background-color: $F !important
@@ -140,11 +139,11 @@ export default {
             color: $C-title !important
         .mu-icon-button
             color: $C-theme !important
-
-// position: fixed;
-// display: block;
-// width: 100%;
-// background-color: red;
-// top: 0;
-// z-index: 1;
+// 移动页面时, PC端添加改变class事件
+.moveViewStyle-PC
+    background-color: $F !important
+    .warp--pc-header
+        .pc--header--box
+            >span
+                color: $C-title !important
 </style>
