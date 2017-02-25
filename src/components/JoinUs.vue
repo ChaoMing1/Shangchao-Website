@@ -165,6 +165,8 @@ export default {
         p.joinUs--text
             +REM( font-size, $F-text )
             +REM( line-height, $F-title*1.2 )
+    @media only screen and ( min-width : 768px )
+        +REM-padding-LR( $M-margin )
     @media only screen and ( min-width : 1024px )
         .joinUsBox
             +REM( height, 400px )

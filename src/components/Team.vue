@@ -52,6 +52,8 @@ export default {
     +global-maxWidth
     // 通用样式
     .teamBox
+        @media only screen and ( min-width : 768px )
+            width: 50% !important
         img
             +block
         .teamBox--text
@@ -71,6 +73,18 @@ export default {
             +imgCover( 100% )
         .teamBox--text
             +bC( $C-sub-theme )
+        @media only screen and ( min-width : 768px )
+            +REL
+            width: 50%
+            height: 600px
+            >img
+                height: 100%
+                object-fit: cover
+            .teamBox--text
+                +ABS
+                +team-PC-style
+                right: 0
+                height: 55%
         @media only screen and ( min-width : 1180px )
             +REL
             width: 50%
@@ -88,8 +102,28 @@ export default {
         .teamBox--text
             +bC( $C-L-sub-theme )
         @media only screen and ( min-width : 768px )
+            +REL
+            width: 50%
+            height: 600px
+            >.teamBox--text
+                +ABS
+                top: 0
+                left: 0
+                height: 45%
+                +REM-padding-TB( $M-contentMargin*2 )
             >img
                 +imgCover( 50% )
+                &:first-child
+                    +dib
+                    left: 0
+                    bottom: 0
+                    +w-h( 100%, 66% )
+                    +mT( 52.9% )
+                &:last-child
+                    +ABS
+                    top: 45%
+                    +w-h( 69%, 55% )
+                    left: 50%
         @media only screen and ( min-width : 1180px )
             +REL
             width: 50%

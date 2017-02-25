@@ -45,6 +45,8 @@ export default {
         .demo-flat-button
             border: 1px solid $F
             color: $F
+        @media only screen and ( min-width : 768px )
+            bottom: 25%
     @media only screen and ( min-width : 1180px )
         height: 1024px
         .banner--title
@@ -64,6 +66,9 @@ export default {
             >button
                 +ellipseBtn
                 +REM( height, 30px )
+    @media only screen and ( min-width : 2000px )
+        .banner--title
+            padding-top: 15%
 // 公用样式
 .whileColor
     color: $F

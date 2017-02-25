@@ -176,12 +176,15 @@ export default {
             }
             // "加入我们" - 背景图片
             ,joinUsBcImg: require('./assets/img/bg.png')
+            ,saveViewState  : ''                                                                    // 用于页面版块是否发生改变( 只有确认版块改变后, 触发改变; )
+            ,cacheViewState : ''                                                                    // 用于缓存页面版块状态( 高频状态, 页面滚动就触发改变 )
         }
     }
     ,mounted: function() {
-        this.watchScrollY()             // 监听向上滑动, 改变样式
+        this.watchScrollY()                                                                         // 监听向上滑动, 改变样式
     }
     ,methods: {
+        // 目的: 监听屏幕滚动
         watchScrollY() {
             window.onscroll = () => {
                 let yValue              = window.scrollY
@@ -190,11 +193,44 @@ export default {
                 if( yValue == 0 ) {
                     mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1' )
                     pcAppBar.setAttribute( 'class', 'pc-header' )
+                    this.$data.saveViewState = ''                                                   // 修改 $data变成初始值 空字符串
+                    // console.log('清空$data状态, 回到HOME状态')
+                    this.changeBtmNavStyle( 1 )
                 } else {
                     mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1 moveViewStyle' )
                     pcAppBar.setAttribute( 'class', 'pc-header moveViewStyle-PC' )
+                    if( yValue > 1000 && yValue <1700 ) {
+                        this.cacheMethodsState('关于我们', 2)
+                    } else if( yValue >= 1700 && yValue < 2300  ) {
+                        this.cacheMethodsState('服务项目', 3)
+                    } else if ( yValue >= 2300 && yValue < 3100 ) {
+                        this.cacheMethodsState('成功案例', 4)
+                    } else if ( yValue >= 3100 && yValue < 4100 ) {
+                        this.cacheMethodsState('团队介绍', 5)
+                    } else if ( yValue >= 4100 && yValue < 5600 ) {
+                        this.cacheMethodsState('招贤纳士', 6)
+                    } else if ( yValue >= 5600 ) {
+                        this.cacheMethodsState('联系我们', 7)
+                    }
+
                 }
             }
+        }
+        // 目的: 根据页面滚动 触发判断
+        ,cacheMethodsState( moduleName, btmNum ) {
+            let saveViewState = this.$data.saveViewState
+            if( moduleName != saveViewState ) {                                                     // 如果比较 缓存状态 与 $data 状态不同， 版块发生改变
+                this.changeBtmNavStyle( btmNum )                                                    // console.log('版块发生改变, 修改 $data值')
+                this.$data.saveViewState = moduleName
+            }
+        }
+        // 目的: 改变页面btm按钮样式
+        ,changeBtmNavStyle( btmNum ) {
+            let btmArr = document.getElementsByClassName('mu-buttom-item')
+            for( let i = 0; i < btmArr.length; i++ ) {                                              // 清空class
+                btmArr[i].setAttribute( 'class', 'mu-buttom-item' )
+            }
+            btmArr[btmNum - 1].setAttribute( 'class', 'mu-buttom-item mu-bottom-item-active' )
         }
     }
     ,components: components
