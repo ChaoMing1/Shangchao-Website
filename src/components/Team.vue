@@ -124,6 +124,18 @@ export default {
                     top: 45%
                     +w-h( 69%, 55% )
                     left: 50%
+        @media only screen and ( min-width : 1024px )
+            >img
+                &:first-child
+                    +team-PC-style
+                    left: 0
+                    +mT( 49.2% )
+                    height: 58%
+                &:last-child
+                    +team-PC-style
+                    right: 0
+                    +mT( 0 )
+                    height: 55%
         @media only screen and ( min-width : 1180px )
             +REL
             width: 50%
@@ -143,4 +155,21 @@ export default {
                     +team-PC-style
                     right: 0
                     +mT( 50.9% )
+        @media only screen and ( min-width : 1440px )
+            >img
+                &:first-child
+                    +team-PC-style
+                    left: 0
+                    +mT( 50.9% )
+                &:last-child
+                    +team-PC-style
+                    right: 0
+                    +mT( 5.2% )
+                    height: 50%
+        @media only screen and ( min-width : 1920px )
+            >img
+                &:last-child
+                    +team-PC-style
+                    right: 0
+                    +mT( 5.2% )
 </style>
