@@ -53,3 +53,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 > JS文件
 
 1. 使用驼峰命名法( 避免使用 破折号 / 下划线 连接两个单词 )
+
+***
+
+- [ ] **Shangchao-Website待优化**
+    - [ ]  需要优化`Team`组件内的图片样式, 改用`flex`方式
