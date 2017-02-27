@@ -1,15 +1,16 @@
 # 上朝科技官网
 
-> 本页面需要在服务器环境下访问( 可使用 `yarn run dev` 预览 ), 勿直接浏览静态页面
+> 本页面需要在服务器环境下访问( 可使用 `yarn run dev( npm run dev )` 预览 ), 勿直接浏览静态页面
 
 ## 使用技术:
-| 技术名称                                                      | 作用           |  版本  |
-| --------                                                      | -----:         | :----:  |
-| [Vuejs](http://cn.vuejs.org/)                                 | 框架            |   2.1.10     |
-| [Sass](http://www.sass-zh.com/)                               | 样式预处理器     |  4.5.0  |
-| [Webpack](http://webpackdoc.com/)                             | 模块打包         |  2.2.1  |
-| [Muse UI](https://museui.github.io/#/index)                   | UI框架          |  2.0.0-rc.5  |
-| [Pug](https://pugjs.org/zh-cn/api/getting-started.html)       | Node模版语言    |  2.0.0-beta11  |
+| 技术名称                                                      | 作用                    |  版本  |
+| --------                                                      | -----:                | :----:  |
+| [Vuejs](http://cn.vuejs.org/)                                 | 框架                  |   2.1.10     |
+| [Muse UI](https://museui.github.io/#/index)                   | UI框架                |  2.0.0-rc.5  |
+| [Pug](https://pugjs.org/zh-cn/api/getting-started.html)       | Node模版              |  2.0.0-beta11  |
+| [Sass](http://www.sass-zh.com/)                               | 样式预处理器           |  4.5.0  |
+| [Webpack](http://webpackdoc.com/)                             | 模块打包              |  2.2.1  |
+| [Gulp](http://www.gulpjs.com.cn/)                             | 自动构建( 压缩图片 )   |  3.9.1  |
 
 ## Build Setup / 开发流程
 
