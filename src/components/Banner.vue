@@ -35,7 +35,7 @@ export default {
     .banner--title
         position: absolute
         left: 10%
-        bottom: 10%
+        bottom: 15%
         h2
             display: inline-block
             +REM( font-size, $F-title )
@@ -45,6 +45,10 @@ export default {
         .demo-flat-button
             border: 1px solid $F
             color: $F
+        >button
+                +ellipseBtn
+                // 隐藏不必要的shadow效果
+                box-shadow: none
         @media only screen and ( min-width : 768px )
             bottom: 25%
     @media only screen and ( min-width : 1180px )

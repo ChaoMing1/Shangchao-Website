@@ -56,5 +56,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ***
 
-- [ ] **Shangchao-Website待优化**
+- [ ] **Shangchao-Website优化**
     - [ ]  需要优化`Team`组件内的图片样式, 改用`flex`方式
+    - [x]  PC版本, `header`头部选中下划线 要在底部, 更改样式效果( 增粗. 更清晰 )
+    - [x]  手机版本, `header`头部不需要 `shadow`效果
+    - [x]  '招贤纳士' 文字大小样式需要统一, 只有标题需要大字体, 其他皆为统一字体大小
+    - [x]  整体页面字体保持'微软雅黑'字体( 不做系统判断 )

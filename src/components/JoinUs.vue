@@ -151,7 +151,7 @@ export default {
         .info
             +REM-margin-TB( $M-contentMargin )
             span
-                +REM( font-size, $F-info )
+                +REM( font-size, $F-text )
                 &:first-child
                     +REM( margin-right, $M-contentMargin )
                     +REM( padding-right, $M-contentMargin )
@@ -160,7 +160,7 @@ export default {
                         style: solid
         p.subTitle
             +REM( margin-bottom, $M-contentMargin )
-            +REM( font-size, $F-info )
+            +REM( font-size, $F-text )
             +fW( bold )
         p.joinUs--text
             +REM( font-size, $F-text )

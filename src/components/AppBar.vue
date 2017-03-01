@@ -50,7 +50,7 @@ export default {
     }
     ,methods: {
         toggle (flag) {
-            this.open = !this.open
+            this.open   = !this.open
             this.docked = !flag
         }
         ,toId( idName ) {
@@ -81,7 +81,7 @@ export default {
             // 顶部导航栏( 未滚动 )
             .mu-appbar
                 position: fixed
-                background-color: rgba( $C-base, .1 )
+                +bC( inherit )
                 // left下
                 .logoImg
                         +flexCenter
@@ -108,8 +108,6 @@ export default {
             .warp--pc-header
                 +global-maxWidth
                 padding: 0 !important
-                    top     : $M-contentMargin !important
-                    bottom  : $M-contentMargin !important
                 .pc--header--box
                     width: 50%
                     >div
