@@ -51,7 +51,7 @@ export default {
                     }
                     ,{
                         text   : '我们'
-                        ,color : 'rgb( 216, 59, 16 )'
+                        ,color : '#333'
                     }
                 ]
                 ,subTitle: {
@@ -68,12 +68,12 @@ export default {
             ,service: {
                 title: [
                     {
-                        text   : '服务'
-                        ,color : 'rgb( 51,51,51 )'
+                        text   : '提供'
+                        ,color : '#333'
                     }
                     ,{
-                        text   : '项目'
-                        ,color : 'rgb( 216, 59, 16 )'
+                        text   : '服务'
+                        ,color : '#333'
                     }
                 ]
                 ,subTitle: {
@@ -90,16 +90,16 @@ export default {
             ,works: {
                 title: [
                     {
-                        text   : '成功'
-                        ,color : 'rgb( 51,51,51 )'
+                        text   : '行业'
+                        ,color : '#333'
                     }
                     ,{
-                        text   : '案例'
-                        ,color : 'rgb( 216, 59, 16 )'
+                        text   : '方案'
+                        ,color : '#333'
                     }
                 ]
                 ,subTitle: {
-                    text    : 'OUR LATEST WORKS'
+                    text    : 'WHAT WE SOLVE'
                     ,color  : 'rgb( 85,85,85 )'
                 }
                 ,icon: {
@@ -113,11 +113,11 @@ export default {
                 title: [
                     {
                         text   : '团队'
-                        ,color : 'rgb( 51,51,51 )'
+                        ,color : '#333'
                     }
                     ,{
                         text   : '介绍'
-                        ,color : 'rgb( 216, 59, 16 )'
+                        ,color : '#333'
                     }
                 ]
                 ,subTitle: {
@@ -157,15 +157,15 @@ export default {
                 title: [
                     {
                         text   : '联系'
-                        ,color : 'rgb( 51,51,51 )'
+                        ,color : '#333'
                     }
                     ,{
                         text   : '我们'
-                        ,color : 'rgb( 216, 59, 16 )'
+                        ,color : '#333'
                     }
                 ]
                 ,subTitle: {
-                    text    : 'GET IN TOUCH'
+                    text    : 'CONTACT US'
                     ,color  : 'rgb( 85,85,85 )'
                 }
                 ,icon: {

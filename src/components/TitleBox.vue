@@ -1,8 +1,9 @@
+// 标题组件 - 通用
 <template lang="pug">
 .title( v-bind:id="title_info.idName" )
     .warp--title
-        h2( v-bind:style = " { color: title_info.title[0].color,display: 'inline-block' } " ) {{ title_info.title[0].text }}
-        h2( v-bind:style = " { color: title_info.title[1].color,display: 'inline-block' } " ) {{ title_info.title[1].text }}
+        h2( v-bind:style = " { color: title_info.title[0].color, display: 'inline-block' } " ) {{ title_info.title[0].text }}
+        h2( v-bind:style = " { color: title_info.title[1].color, display: 'inline-block', fontWeight: 'bold' } " ) {{ title_info.title[1].text }}
         p( v-bind:style = " { color: title_info.subTitle.color } " ) {{ title_info.subTitle.text }}
         .modifiedLine
             .string( v-bind:style = " { left: '0', backgroundColor: title_info.icon.color } " )

@@ -5,7 +5,7 @@
         h2.themeColor 互联网服务公司
         p.whileColor 上朝信息科技 · 多行业应用产品
         p.whileColor 满足不同行业需求 · IT解决方案与服务提供商
-        mu-flat-button( label="联系我们" class="demo-flat-button" @click="toId( 'contactUs-anchor' )" )
+        // mu-flat-button( label="联系我们" class="demo-flat-button" @click="toId( 'contactUs-anchor' )" ) // V1.2 移除按钮
 </template>
 
 <script>
@@ -35,7 +35,7 @@ export default {
     .banner--title
         position: absolute
         left: 10%
-        bottom: 15%
+        bottom: 20%
         h2
             display: inline-block
             +REM( font-size, $F-title )
@@ -77,5 +77,7 @@ export default {
 .whileColor
     color: $F
 .themeColor
-    color: $C-theme
+    // color: $C-theme // V1.1版本更改为白色, 加粗
+    color: $F
+    +fW( bold )
 </style>
