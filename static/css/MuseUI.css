@@ -2,7 +2,7 @@
 
 /* 手机号码 - 下的提示 设置隐藏 */
 .mu-text-field.focus-state{
-    color: rgb( 216, 59, 16 ) !important
+    color: #67b5c2 !important
 }
 .mu-text-field-focus-line{
     background-color: rgb( 92, 166, 218 ) !important
@@ -18,11 +18,11 @@
 }
 /* 选择导航栏文字后 底部border颜色修改 */
 .warp--pc-header .mu-bottom-item-active .mu-ripple-wrapper {
-    border-bottom: 2px solid rgb( 216, 59, 16 );
+    border-bottom: 2px solid #67b5c2;
 }
 /* 选择导航栏文字后 文字颜色颜色修改 */
 .warp--pc-header .mu-bottom-item-active .mu-bottom-item-text{
-    color: rgb( 216, 59, 16 ) !important;
+    color: #67b5c2 !important;
     font-weight: bold;
 }
 .moveViewStyle-PC .warp--pc-header span{

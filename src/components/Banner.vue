@@ -45,12 +45,6 @@ export default {
         .demo-flat-button
             border: 1px solid $F
             color: $F
-        >button
-                +ellipseBtn
-                // 隐藏不必要的shadow效果
-                box-shadow: none
-        @media only screen and ( min-width : 768px )
-            bottom: 25%
     @media only screen and ( min-width : 1180px )
         height: 1024px
         .banner--title
@@ -67,9 +61,6 @@ export default {
             >p
                 +fS( $F-title )
                 +lH( $F-title*2 )
-            >button
-                +ellipseBtn
-                +REM( height, 30px )
     @media only screen and ( min-width : 2000px )
         .banner--title
             padding-top: 15%

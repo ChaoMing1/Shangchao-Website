@@ -1,16 +1,16 @@
 <template lang="pug">
 #ContactUs
     mu-row( gutter )
-        // 表单
-        mu-col( class="contactUs--box contactUs--form" width="100" tablet="100" desktop="60" )
-            p.form--text {{ formTitle }}
-            mu-text-field( hintText="您的称呼" )
-            br
-            mu-text-field( hintText="联系方式" type="number" )
-            br
-            mu-text-field( hintText="您的留言" multiLine v-bind:rows="5" v-bind:rowsMax="6" )
+        // 表单( 因暂无后台, 将提交表单暂时注释 )
+        // mu-col( class="contactUs--box contactUs--form" width="100" tablet="100" desktop="60" )
+        //     p.form--text {{ formTitle }}
+        //     mu-text-field( hintText="您的称呼" )
+        //     br
+        //     mu-text-field( hintText="联系方式" type="number" )
+        //     br
+        //     mu-text-field( hintText="您的留言" multiLine v-bind:rows="5" v-bind:rowsMax="6" )
         // 联系信息
-        mu-col( class="contactUs--box contactUs--contactInfo" width="100" tablet="100" desktop="40" )
+        mu-col( class="contactUs--box contactUs--contactInfo" width="100" tablet="100" desktop="100" )
             .contactInfo--item( v-for=" item in contactUsArr " )
                 i( class="mu-icon material-icons" ) {{ item.iconName }}
                 .contactInfo--text
@@ -23,28 +23,26 @@
 export default {
     data() {
         return {
-            formTitle                   : `如果您想咨询相关的定制开发业务，或者实地考察，更加直观的了解我们到产品和公司实力，可以发送留言或直接拨打热线电话。`
-            ,contactUsArr               : [
+            formTitle                   : `如果您想咨询相关的定制开发业务，或者实地考察，更加直观的了解我们到产品和公司实力，可以发送留言或直接拨打热线电话。`,
+            contactUsArr                : [
                 {
-                    iconName            : 'call'
-                    ,title              : '热线电话'
-                    ,info               : '0532-83861532'
+                    iconName            : 'call',
+                    title               : '热线电话',
+                    info                : '0532-83861532'
+                }, {
+                    iconName            : 'email',
+                    title               : '邮件咨询',
+                    info                : 'aplusoffice@forevercj.com'
+                }, {
+                    iconName            : 'map',
+                    title               : '公司地址',
+                    info                : '山东省青岛市市南区华润大厦B座2408号'
                 }
-                ,{
-                    iconName            : 'email'
-                    ,title              : '邮件咨询'
-                    ,info               : 'aplusoffice@forevercj.com'
-                }
-                ,{
-                    iconName            : 'map'
-                    ,title              : '公司地址'
-                    ,info               : '山东省青岛市市南区华润大厦B座2408号'
-                }
-            ]
-            ,input                      : ''
-            ,inputErrorText             : ''
-            ,multiLineInput             : ''
-            ,multiLineInputErrorText    : ''
+            ],
+            input                      : '',
+            inputErrorText             : '',
+            multiLineInput             : '',
+            multiLineInputErrorText    : ''
         }
     }
     ,methods: {
@@ -65,7 +63,10 @@ export default {
     +global-maxWidth
     @media only screen and ( min-width : 1180px )
         .contactUs--box
-            height: 400px
+            height: 150px
+            .contactInfo--item
+                +dib
+                width: 33%
             &:first-child
                 +mB( 0 !important)
     +REM-margin-TB( $M-padding )

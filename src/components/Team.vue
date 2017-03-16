@@ -12,21 +12,18 @@
 
         // right
         mu-col( class="teamBox teamRight" width="100" tablet="50" desktop="50" )
+        
             // mobile box
             .teamRight--mobile
-                img( v-bind:src="teamRight.img_A" )
-                .teamBox--text
-                    .teamBox--iconImg
-                        img( v-bind:src="iconImg" class="teamBox--iconImg" )
-                    p {{ teamRight.text }}
-                img( v-bind:src="teamRight.img_B" )
+                img( v-for="item in teamRight.imgArr" v-bind:src="item.imgUrl" )
 
             // PC box
             .teamRight--PC
                 .teamBox--text
-                    .teamBox--iconImg
-                        img( v-bind:src="iconImg" class="teamBox--iconImg" )
-                    p {{ teamRight.text }}
+                    // .teamBox--iconImg
+                    //     img( v-bind:src="iconImg" class="teamBox--iconImg" )
+                    // p {{ teamRight.text }}
+                    img( v-bind:src="teamRight.img_C" )
                 .teamRight--PC--imgBox
                     img( v-bind:src="teamRight.img_A" )
                     img( v-bind:src="teamRight.img_B" )
@@ -43,9 +40,19 @@ export default {
                                 在开发领域有着雄厚技术与实战经验。”`
             }
             ,teamRight: {
-                img_A       : require('../assets/img/group-17.png')
-                ,img_B      : require('../assets/img/group-16.png')
-                ,text       : `我们深刻理解国际前沿设计趋势、对流程的互联网站点和软件应用有深刻认识、
+                img_A       : require('../assets/img/group-17.png'),
+                img_B       : require('../assets/img/group-16.png'),
+                img_C       : require('../assets/img/group-16@3x.png'),      // V1.1 版本新加
+                imgArr      : [
+                    {
+                        imgUrl: require('../assets/img/group-17.png')
+                    }, {
+                        imgUrl: require('../assets/img/group-16.png')
+                    }, {
+                        imgUrl: require('../assets/img/group-16@3x.png')         // V1.1 版本新加
+                    }
+                ],
+                text        : `我们深刻理解国际前沿设计趋势、对流程的互联网站点和软件应用有深刻认识、
                                 在开发领域有着雄厚技术与实战经验。”`
             }
             ,iconImg: require('../assets/img/ico-quotation@3x.png')
@@ -61,7 +68,7 @@ export default {
 =team-PC-style
     +dib
     bottom: 0
-    +w-h( 50%, 50% )
+    +w-h( 50%, 45% )
 
 #Team
     +global-maxWidth
@@ -73,26 +80,28 @@ export default {
         >img
             +block
         .teamBox--text
-            +REM( padding, $M-padding )
+            // +REM( padding, $M-padding )  // V1.1版本去除文字
+            padding: 0
             +bC( $C-L-sub-theme )
             .teamBox--iconImg
-                +REM-W-H( $F-title, $F-title )
-                +REM( margin-bottom, $M-contentMargin )
-                >img
-                    +imgCover( 118% )
+                // +REM-W-H( $F-title, $F-title )
+                // +REM( margin-bottom, $M-contentMargin )
+                // >img
+                //     +imgCover( 30% )
             >p
                 +REM( font-size, $F-text )
                 +REM( line-height, $F-title )
                 color: $F
-
-
 
     // 独立样式
     .teamLeft
         >img
             +imgCover( 100% )
         .teamBox--text
+            +REM( padding, $M-contentMargin )
             +bC( $C-sub-theme )
+            .teamBox--iconImg >img
+                +imgCover( 10% )
         @media only screen and ( min-width : 768px )
             +REL
             width: 50%
@@ -105,6 +114,7 @@ export default {
                 +team-PC-style
                 right: 0
                 height: 55%
+                padding: $M-contentMargin
         @media only screen and ( min-width : 1180px )
             +REL
             width: 50%
@@ -116,6 +126,7 @@ export default {
                 +ABS
                 +team-PC-style
                 right: 0
+                
 
 
 .teamRight
@@ -125,8 +136,7 @@ export default {
             >img
                 +block
                 +imgCover( 100% )
-            .teamBox--text
-                +block
+                +REM( max-height, 200px )
         @media only screen and ( min-width : 768px )
             +dNone
 
@@ -144,4 +154,11 @@ export default {
                 height: 55%
                 >img
                     +imgCover( 50% )
+            .teamBox--text >img
+                +imgCover( 100% )
+        @media only screen and ( min-width : 1180px )
+            .teamBox--text
+                height: 55%
+            .teamRight--PC--imgBox
+                height: 45% 
 </style>

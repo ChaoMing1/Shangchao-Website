@@ -3,7 +3,7 @@
     .mobile-header
         mu-appbar#mobile--appbar( class="" )
             .logoImg( slot="left" )
-                img( src="../assets/img/logo-shangchao-orange-44-px@3x.png" )
+                img( src="../assets/img/logo-shangchao-dark-44-px@3x.png" )
             .mu-appbar-title
                 span.mobile--title 青岛上朝信息科技有限公司
             mu-icon-button( icon='menu' class="mobile--btn" slot="right" @click="toggle( true )" )
@@ -11,8 +11,9 @@
             mu-list( @itemClick="docked ? '' : toggle()" )
                 mu-list-item( title="HOME"     @click="toId( 'HOME-anchor' )" )
                 mu-list-item( title="关于我们"  @click="toId( 'aboutUs-anchor' )" )
-                mu-list-item( title="服务项目"  @click="toId( 'service-anchor' )" )
-                mu-list-item( title="成功案例"  @click="toId( 'works-anchor' )" )
+                mu-list-item( title="提供服务"  @click="toId( 'service-anchor' )" )
+                mu-list-item( title="服务简介"  @click="toId( 'intro-anchor' )" )
+                mu-list-item( title="行业方案"  @click="toId( 'works-anchor' )" )
                 mu-list-item( title="团队介绍"  @click="toId( 'team-anchor' )" )
                 mu-list-item( title="招贤纳士"  @click="toId( 'joinUs-anchor' )" )
                 mu-list-item( title="联系我们"  @click="toId( 'contactUs-anchor' )" )
@@ -23,7 +24,7 @@
                 // PC - 左侧
                 mu-col( class="pc--header--box" desktop="40" )
                     .logoImg
-                        img( src="../assets/img/logo-shangchao-orange-44-px@3x.png" )
+                        img( src="../assets/img/logo-shangchao-dark-44-px@3x.png" )
                     .mu-appbar-title
                         span.mobile--title 青岛上朝信息科技有限公司
                 // PC - 右侧
@@ -43,25 +44,33 @@
 export default {
     data () {
         return {
-            open        : false
-            ,docked     : true
-            ,bottomNav  : 'HOME-anchor'
+            open        : false,
+            docked      : true,
+            bottomNav   : 'HOME-anchor'
         }
-    }
-    ,methods: {
-        toggle (flag) {
+    },
+    methods: {
+        toggle ( flag ) {
             this.open   = !this.open
             this.docked = !flag
-        }
-        ,toId( idName ) {
-            location.href = '#' + idName
-        }
-        ,handleChange( val ) {
+        },
+        toId( idName ) {
+            // 首先将锚点点击事件的name派发到actions事件中
+            this.$store.dispatch({
+                type        : 'setAnchorName',
+                anchorName  : idName
+            })
+        },
+        handleChange( val ) {
             this.bottomNav = val
             this.PCtoId( val )
-        }
-        ,PCtoId( idName ) {
-            location.href = '#' + idName
+        },
+        PCtoId( idName ) {
+            // 首先将锚点点击事件的name派发到actions事件中
+            this.$store.dispatch({
+                type        : 'setAnchorName',
+                anchorName  : idName
+            })
         }
     }
 }
@@ -104,7 +113,7 @@ export default {
             display: block
             width: 100%
             top: 0
-            z-index: 1
+            z-index: 9999
             .warp--pc-header
                 +global-maxWidth
                 padding: 0 !important

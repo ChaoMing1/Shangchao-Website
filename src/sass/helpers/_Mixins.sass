@@ -84,6 +84,10 @@
     position: absolute
 =block
     display: block
+=box
+    display: -webkit-box
+    display: -moz-box
+    display: box
 =dNone
     display: none
 =W100
@@ -92,6 +96,10 @@
     display: inline-block
     *display: inline
     *zoom: 1
+=boxFlex( $flex: 1 )
+    -moz-box-flex: $flex
+    -webkit-box-flex: $flex
+    box-flex: $flex
 // 0.5像素边框线混合( 依赖上方部分混合, 所以此混合位置要在最后 )
 =halfString( $color, $width )
     +REL
@@ -105,16 +113,37 @@
         transform: scale( .5, .5 )
         box-sizing: border-box
 // 椭圆按钮( 有阴影 )
-=ellipseBtn
+=ellipseBtn( $heightSize )
 	position: relative
 	margin: 10px
 	padding: 0 20px
+    +REM( height, $heightSize )
+    +REM( line-height, $heightSize )
 	text-align: center
 	text-decoration: none
 	text-shadow: 1px 1px 1px rgba(255,255,255, .22)
 	border-radius: 30px
 	box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44)
 	transition: all 0.15s ease
+
+// 省略号, 添加行数控制 参数为(行高,行数)
+=ell-line($lineHeight,$lineNum)
+    -ms-text-overflow: ellipsis
+    text-overflow: ellipsis
+    +lH($lineHeight)
+    word-break: break-all
+    display: -webkit-box
+    -webkit-line-clamp: $lineNum
+    -webkit-box-orient: vertical
+    overflow: hidden
+
+=rowBorder( $rowNum, $color )
+    @for $i from 1 through $rowNum
+        &:nth-child( #{$i} )
+            border-top: 1px solid $color
+    &:nth-child( #{$rowNum}n+1 )
+        border-left: 1px solid $color
+
 
 // 方便混合( REM转换 margin-top + margin-bottom值 )
 =REM-margin-TB( $margin-size )
@@ -132,3 +161,14 @@
 =REM-padding-LR( $padding-size )
     +REM( padding-left, $padding-size )
     +REM( padding-right, $padding-size )
+
+/*
+ *      项目专用 Mixin
+ */
+
+// '服务简介', '行业方案'  - 标题用混合 
+=titleStyle( $color )
+    +REM( margin-left, $M-padding )
+    +fS( $F-info )
+    +fW( bold )
+    color: $color
