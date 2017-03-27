@@ -3,14 +3,16 @@
 > 本页面需要在服务器环境下访问( 可使用 `yarn run dev( npm run dev )` 预览 ), 勿直接浏览静态页面
 
 ## 使用技术:
-| 技术名称                                                      | 作用                    |  版本  |
-| --------                                                      | -----:                | :----:  |
-| [Vuejs](http://cn.vuejs.org/)                                 | 框架                  |   2.1.10     |
-| [Muse UI](https://museui.github.io/#/index)                   | UI框架                |  2.0.0-rc.5  |
-| [Pug](https://pugjs.org/zh-cn/api/getting-started.html)       | Node模版              |  2.0.0-beta11  |
-| [Sass](http://www.sass-zh.com/)                               | 样式预处理器           |  4.5.0  |
-| [Webpack](http://webpackdoc.com/)                             | 模块打包              |  2.2.1  |
-| [Gulp](http://www.gulpjs.com.cn/)                             | 自动构建( 压缩图片 )   |  3.9.1  |
+| 技术名称                                                      | 作用                         |  版本  |
+| --------                                                      | -----:                      | :----:  |
+| [Vuejs](http://cn.vuejs.org/)                                 | 框架                        |   2.2.2     |
+| [Vue-Router](http://router.vuejs.org/zh-cn/)                  | Vue路由                     |  2.3.0 |
+| [Vuex](https://vuex.vuejs.org/zh-cn/)                         | Vue状态管理                 |  2.2.1 |
+| [Muse UI](https://museui.github.io/#/index)                   | UI框架                      |  2.0.0-rc.5  |
+| [Pug](https://pugjs.org/zh-cn/api/getting-started.html)       | Node模版                    |  2.0.0-beta11  |
+| [Sass](http://www.sass-zh.com/)                               | 样式预处理器( node-sass )   |  4.5.1  |
+| [Webpack](http://webpackdoc.com/)                             | 模块打包                    |  2.2.1  |
+| [Gulp](http://www.gulpjs.com.cn/)                             | 自动构建( 压缩图片 )         |  3.9.1  |
 
 ## Build Setup / 开发流程
 
@@ -33,11 +35,6 @@ npm run build --report
 
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-## ToDoList
-
-* 偶尔`首页` 顶部导航点击事件 失效( 偶尔能实现 )
-* 跳转路由时, 保存跳转前的位置信息
 
 ## 命名约定
 > Vue文件
@@ -67,4 +64,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
     - [x]  手机版本, `header`头部不需要 `shadow`效果
     - [x]  '招贤纳士' 文字大小样式需要统一, 只有标题需要大字体, 其他皆为统一字体大小
     - [x]  整体页面字体保持'微软雅黑'字体( 不做系统判断 )
+    - [x]  偶尔`首页` 顶部导航点击事件 失效( 偶尔能实现 )
+    - [x]  跳转路由时, 保存跳转前的位置信息
 
