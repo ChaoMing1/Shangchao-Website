@@ -1,206 +1,66 @@
 // 首页内容( 路由 - 引入 )
 <template lang="pug">
 #Home
+    AppBar
     Banner
-    .moduleBox( v-bind:style=" { backgroundColor: '#FFF' } " )
-        TitleBox( v-bind:title_info = "aboutUs" )
+    .moduleBox( v-bind:style="{ backgroundColor: aboutUsModule.backgroundColor }" )
+        TitleBox( v-bind:titleInfo="aboutUsModule" )
         AboutUs
-    .moduleBox
-        TitleBox( v-bind:title_info = "service" )
-        Service
-    .moduleBox( v-bind:style="{ backgroundColor: '#FFF' }" )
-        TitleBox( v-bind:title_info = "intro" )
+    .moduleBox( v-bind:style="{ backgroundColor: serviceModule.backgroundColor }" )
+        TitleBox( v-bind:titleInfo="serviceModule" )
+        Server
+    .moduleBox( v-bind:style="{ backgroundColor: introModule.backgroundColor }" )
+        TitleBox( v-bind:titleInfo="introModule" )
         Intro
-    .moduleBox( v-bind:style=" { backgroundColor: '#F5F5F5' } " )
-        TitleBox( v-bind:title_info = "works" )
+    .moduleBox( v-bind:style="{ backgroundColor: worksModule.backgroundColor }" )
+        TitleBox( v-bind:titleInfo="worksModule" )
         Works
-    .moduleBox( v-bind:style=" { backgroundColor: '#FFF' } " )
-        TitleBox( v-bind:title_info = "team" )
+    .moduleBox( v-bind:style="{ backgroundColor: teamModule.backgroundColor }" )
+        TitleBox( v-bind:titleInfo="teamModule" )
         Team
-    .moduleBox( v-bind:style=" { backgroundImage: 'url( ' + joinUsBcImg + ' )', backgroundSize: 'cover' } " )
-        TitleBox( v-bind:title_info = "joinUs" )
+    .moduleBox( v-bind:style="{  backgroundImage: 'url( ' + joinUsModule.bgImg + ' )', backgroundSize: 'cover'  }" )
+        TitleBox( v-bind:titleInfo="joinUsModule" )
         JoinUs
-    .moduleBox
-        TitleBox( v-bind:title_info = "contactUs" )
+    .moduleBox( v-bind:style="{ backgroundColor: teamModule.backgroundColor }" )
+        TitleBox( v-bind:titleInfo="contactUsModule" )
         ContactUs
     MapView
 </template>
 
 <script>
-import Banner       from '../components/Banner'         // Banner组件
-import TitleBox     from '../components/TitleBox'       // 标题组件( 通用 )
-import AboutUs      from '../components/AboutUs'        // 关于我们
-import Service      from '../components/Service'        // 提供服务
-import Intro        from '../components/Intro'          // 服务简介
-import Works        from '../components/Works'          // 行业方案
-import Team         from '../components/Team'           // 团队介绍
-import JoinUs       from '../components/JoinUs'         // 招贤纳士
-import ContactUs    from '../components/ContactUs'      // 联系我们
-import MapView      from '../components/MapView'        // 地图组件
-const components = { Banner, TitleBox, AboutUs, Service, Intro, Works, Team, JoinUs, ContactUs, MapView }
+import TitleBox     from '../components/common/TitleBox'        // 标题
+
+import AppBar       from '../components/Home/AppBar'            // AppBar顶部导航
+import Banner       from '../components/Home/Banner'            // Banner组件
+import MapView      from '../components/Home/MapView'           // 地图组件
+import ContactUs    from '../components/Home/ContactUs'         // 联系我们
+
+import AboutUs      from '../components/Home/AboutUs'           // 关于我们
+import Server       from '../components/Home/Service'           // 提供服务
+import Intro        from '../components/Home/Intro'             // 服务简介
+import Works        from '../components/Home/Works'             // 行业方案
+import Team         from '../components/Home/Team'              // 团队介绍
+import JoinUs       from '../components/Home/JoinUs'            // 招贤纳士
+
+import { aboutUsObj, serviceObj, introObj, worksObj, teamObj, joinUsObj, contactUsObj }    from '../assets/script/module/Home'
+const components = { TitleBox, AppBar, Banner, MapView, ContactUs, AboutUs, Server, Intro, Works, Team, JoinUs }
 
 export default {
     name: 'Home',
+    methods: {},
     data() {
         return {
-            // 关于我们
-            aboutUs: {
-                title: [
-                    {
-                        text   : '关于'
-                        ,color : 'rgb( 51,51,51 )'
-                    }
-                    ,{
-                        text   : '我们'
-                        ,color : '#333'
-                    }
-                ]
-                ,subTitle: {
-                    text    : 'WHO WE ARE'
-                    ,color  : 'rgb( 85,85,85 )'
-                }
-                ,icon: {
-                    class: 'person'
-                    ,color: 'rgb( 110,110,110 )'
-                }
-                ,idName: 'aboutUs-anchor'
-            }
-            // 服务项目
-            ,service: {
-                title: [
-                    {
-                        text   : '提供'
-                        ,color : '#333'
-                    }
-                    ,{
-                        text   : '服务'
-                        ,color : '#333'
-                    }
-                ]
-                ,subTitle: {
-                    text    : 'WHAT WE DOING'
-                    ,color  : 'rgb( 85,85,85 )'
-                }
-                ,icon: {
-                    class: 'settings'
-                    ,color: 'rgb( 110,110,110 )'
-                }
-                ,idName: 'service-anchor'
-            }
-            // 服务简介
-            ,intro: {
-                title: [
-                    {
-                        text: '服务',
-                        color: '#333'
-                    }, {
-                        text: '简介',
-                        color: '#333'
-                    }
-                ]
-                ,subTitle: {
-                    text    : 'WHO WE DOING'
-                    ,color  : 'rgb( 85,85,85 )'
-                }
-                ,icon: {
-                    class: 'settings'
-                    ,color: 'rgb( 110,110,110 )'
-                }
-                ,idName: 'intro-anchor'
-            }
-            // 成功案例
-            ,works: {
-                title: [
-                    {
-                        text   : '行业'
-                        ,color : '#333'
-                    }
-                    ,{
-                        text   : '方案'
-                        ,color : '#333'
-                    }
-                ]
-                ,subTitle: {
-                    text    : 'WHAT WE SOLVE'
-                    ,color  : 'rgb( 85,85,85 )'
-                }
-                ,icon: {
-                    class: 'photo'
-                    ,color: 'rgb( 110,110,110 )'
-                }
-                ,idName: 'works-anchor'
-            }
-            // 团队介绍
-            ,team: {
-                title: [
-                    {
-                        text   : '团队'
-                        ,color : '#333'
-                    }
-                    ,{
-                        text   : '介绍'
-                        ,color : '#333'
-                    }
-                ]
-                ,subTitle: {
-                    text    : 'OUR TEAM'
-                    ,color  : 'rgb( 85,85,85 )'
-                }
-                ,icon: {
-                    class: 'settings'
-                    ,color: 'rgb( 110,110,110 )'
-                }
-                ,idName: 'team-anchor'
-            }
-            // 招贤纳士
-            ,joinUs: {
-                title: [
-                    {
-                        text   : '招贤'
-                        ,color : 'rgb( 250, 250, 250 )'
-                    }
-                    ,{
-                        text   : '纳士'
-                        ,color : 'rgb( 250, 250, 250 )'
-                    }
-                ]
-                ,subTitle: {
-                    text    : 'JOIN US'
-                    ,color  : 'rgb( 250, 250, 250 )'
-                }
-                ,icon: {
-                    class: 'group'
-                    ,color: 'rgb( 250, 250, 250 )'
-                }
-                ,idName: 'joinUs-anchor'
-            }
-            // 联系我们
-            ,contactUs: {
-                title: [
-                    {
-                        text   : '联系'
-                        ,color : '#333'
-                    }
-                    ,{
-                        text   : '我们'
-                        ,color : '#333'
-                    }
-                ]
-                ,subTitle: {
-                    text    : 'CONTACT US'
-                    ,color  : 'rgb( 85,85,85 )'
-                }
-                ,icon: {
-                    class: 'call'
-                    ,color: 'rgb( 110,110,110 )'
-                }
-                ,idName: 'contactUs-anchor'
-            }
-            // "加入我们" - 背景图片
-            ,joinUsBcImg: require('../assets/img/bg.png')
-            ,saveViewState  : ''                                                                    // 用于页面版块是否发生改变( 只有确认版块改变后, 触发改变; )
-            ,cacheViewState : ''
+            aboutUsModule: aboutUsObj,
+            serviceModule: serviceObj,
+            introModule: introObj,
+            worksModule: worksObj,
+            teamModule: teamObj ,
+            joinUsModule: joinUsObj,
+            contactUsModule: contactUsObj
         }
+    },
+    mounted: function() {
+        this.$updateViewUrlState( 'Home' )   // 更新 路由url状态
     },
     components: components
 }

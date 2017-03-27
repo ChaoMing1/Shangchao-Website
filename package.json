@@ -1,5 +1,5 @@
 {
-  "name": "shangchao_website",
+  "name": "shangchao-website-reset",
   "version": "1.0.0",
   "description": "上朝科技官网",
   "author": "yanxiaodi <929213769@qq.com>",
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "muse-ui": "^2.0.0-rc.5",
-    "vue": "^2.1.10",
-    "vue-router": "^2.3.0",
+    "vue": "^2.2.2",
+    "vue-router": "^2.2.0",
     "vuex": "^2.2.1"
   },
   "devDependencies": {
@@ -19,15 +19,16 @@
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-env": "^1.2.1",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
-    "extract-text-webpack-plugin": "^2.0.0-rc.2",
+    "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.10.0",
     "friendly-errors-webpack-plugin": "^1.1.3",
     "function-bind": "^1.1.0",
@@ -37,19 +38,19 @@
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
     "imagemin-pngquant": "^5.0.0",
-    "node-sass": "^4.5.0",
+    "node-sass": "^4.5.1",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
     "ora": "^1.1.0",
     "pug": "^2.0.0-beta11",
-    "sass-loader": "^6.0.1",
+    "rimraf": "^2.6.0",
+    "sass-loader": "^6.0.3",
     "semver": "^5.3.0",
-    "shelljs": "^0.7.6",
-    "style-loader": "^0.13.1",
+    "style-loader": "^0.15.0",
     "url-loader": "^0.5.7",
-    "vue-loader": "^11.0.0",
+    "vue-loader": "^11.1.4",
     "vue-style-loader": "^2.0.0",
-    "vue-template-compiler": "^2.1.10",
+    "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
@@ -59,5 +60,10 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

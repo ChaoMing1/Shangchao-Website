@@ -34,6 +34,11 @@ npm run build --report
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+## ToDoList
+
+* 偶尔`首页` 顶部导航点击事件 失效( 偶尔能实现 )
+* 跳转路由时, 保存跳转前的位置信息
+
 ## 命名约定
 > Vue文件
 
@@ -62,3 +67,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
     - [x]  手机版本, `header`头部不需要 `shadow`效果
     - [x]  '招贤纳士' 文字大小样式需要统一, 只有标题需要大字体, 其他皆为统一字体大小
     - [x]  整体页面字体保持'微软雅黑'字体( 不做系统判断 )
+
