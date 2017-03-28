@@ -3,7 +3,7 @@
 #Application( v-bind:style="{ backgroundColor: '#67b5c2' }" )
     DetailAppBar
     DetailBanner( v-bind:DetailBanner="bannerInfo" )
-    // '两大开发平台'
+    // 两大开发平台
     .moduleBox( v-bind:style="{ backgroundColor: twoPlatformModule.backgroundColor }" )
         TitleBox( v-bind:titleInfo="twoPlatformModule" )
         mu-row.moduleBox__content( gutter )
