@@ -1,6 +1,6 @@
 // 详情类 页面专用 Banner组件
 <template lang="pug">
-.detailBanner( class="mediaQuery" v-bind:style=" { backgroundImage: 'url( ' + DetailBanner.bgImg + ' )', backgroundSize: 'cover' } " )
+.detailBanner( id="DetailBanner" class="mediaQuery" v-bind:style=" { backgroundImage: 'url( ' + DetailBanner.bgImg + ' )', backgroundSize: 'cover' } " )
     .banner--title
         h2.whileColor( v-for="item in DetailBanner.titleInfo" ) {{ item.title }}
 </template>

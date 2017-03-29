@@ -30,7 +30,8 @@ export default {
         }
     },
     mounted: function() {
-        this.$updateViewUrlState( 'ECommerce' )   // 更新 路由url状态
+        this.$updateViewUrlState( 'ECommerce' );            // 更新 路由url状态
+        this.$toDetailTop();                                // 初始页面滚动到页面顶部
     },
     components: components
 }
