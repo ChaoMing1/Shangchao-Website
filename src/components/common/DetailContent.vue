@@ -51,14 +51,15 @@ export default {
         .detailContent__img
             +module--mixins
             +flexCenter
-            >img
-                +imgCover( 80% )
+            display: flex !important
 
 // 媒体查询
 .mediaQuery--detailContent
     @media only screen and ( min-width : 320px )
         >div
             +REM( height, 280px )
+            .detailContent__img >img
+                +imgCover( 100% )
             .detailContent__img
                 left: 0
                 width: 25%
@@ -104,6 +105,8 @@ export default {
             .detailContent__img, .detailContent__info
                 width: 50%
             +REM( height, 270px )
+            .detailContent__img >img
+                +imgCover( 70% )
             .detailContent__info
                 >h3
                     +fontStyle( $F-title*1.5, $C-title, 2 )
@@ -113,7 +116,9 @@ export default {
                     +textJustify
     @media only screen and ( min-width : 1024px )
         >div
-            +REM( height, 270px )
+            +REM( height, 300px )
+            .detailContent__img >img
+                +imgCover( 60% )
             .detailContent__info
                 +REM-P( $M-contentMargin*4 )
                 >h3

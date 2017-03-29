@@ -8,11 +8,7 @@
                 img( src="../../assets/img/logo-shangchao-dark-44-px@3x.png" )
             .mu-appbar-title
                 span.mobile--title 青岛上朝信息科技有限公司
-            mu-icon-button( icon='menu' class="mobile--btn" slot="right" @click="toggle( true )" )
-        mu-drawer( right v-bind:open="open" v-bind:docked="docked" @close="toggle()" )
-            mu-list( @itemClick="docked ? '' : toggle()" )
-                mu-list-item( title="HOME" @click="callbackHome()" )
-
+            mu-icon-button( icon='home' class="mobile--btn" slot="right" @click="callbackHome()" )
     // PC端
     .pc-header( id="pc--header" )
         .warp--pc-header
@@ -85,14 +81,14 @@ export default {
                 .mobile--title
                     font-size: $F-text
                 .right
-        @media only screen and ( min-width : 1024px )
+        @media only screen and ( min-width : 1080px )
             display: none
 
     // PC端
     .pc-header      // PC端 样式
         @media only screen and ( min-width : 320px )
             display: none                               // 移动端 - 隐藏
-        @media only screen and ( min-width : 1180px )
+        @media only screen and ( min-width : 1080px )
             position: fixed
             +block
             +W100
@@ -134,6 +130,7 @@ export default {
 // 移动页面时, PC端添加改变class事件
 .moveViewStyle-PC
     background-color: $F !important
+    box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647)
     .warp--pc-header
         .pc--header--box
             >span
