@@ -1,4 +1,4 @@
-const bigDataModule = [
+const BigDataModule = [
     {
         imgLeft: true,
         title: '系统架构',
@@ -12,7 +12,7 @@ const bigDataModule = [
     }, {
         imgLeft: false,
         title: '升级机制',
-        backgroundColor: '#F5F5F5',
+        backgroundColor: '#EAEAEA',
         infoText: `大型系统一旦上线每天都在升级，
                     但是却无法给开发者提供任何的升级时间，
                     哪怕10分钟的间歇也有可能造成大量数据丢失，
@@ -30,7 +30,7 @@ const bigDataModule = [
     }, {
         imgLeft: false,
         title: '安全系统',
-        backgroundColor: '#F5F5F5',
+        backgroundColor: '#EAEAEA',
         infoText: `多层安全防护机制，
                     外加强大的日志系统和数据校正系统，
                     让每一次访问安全无忧。`,
@@ -38,4 +38,4 @@ const bigDataModule = [
     }
 ];
 
-export { bigDataModule };
+export { BigDataModule };

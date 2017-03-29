@@ -1,21 +1,23 @@
 // '电商网站'
 <template lang="pug">
-#ECommerce( v-bind:style="{ backgroundColor: '#67b5c2' }" )
+#ECommerce
     DetailAppBar
     DetailBanner( v-bind:DetailBanner="bannerInfo" )
-    h1( v-bind:style="{ marginTop: '2rem' }" ) 电商网站
+    DetailContent( v-bind:DetailContentProps="eCommerceArr" )
 </template>
 
 <script>
-import DetailAppBar     from '../components/common/DetailAppBar'    
-import DetailBanner     from '../components/common/DetailBanner'   
-const components = { DetailAppBar, DetailBanner }
+import DetailAppBar         from '../components/common/DetailAppBar'    
+import DetailBanner         from '../components/common/DetailBanner'
+import DetailContent        from '../components/common/DetailContent' 
+
+import { ECommerceModule }  from '../assets/script/module/ECommerce.js'  
+const components = { DetailAppBar, DetailBanner, DetailContent }
+
 export default {
     name: 'ECommerce',
-    methods: {},
     data() {
         return {
-            // 传递给 Banner组件( 通用 )的数据
             bannerInfo: {
                 bgImg: require('../assets/img/ECommerce-bgbanner.png'),
                 titleInfo: [
@@ -23,7 +25,8 @@ export default {
                         title: '专业电商系统研发'
                     }
                 ]
-            }
+            },
+            eCommerceArr: ECommerceModule
         }
     },
     mounted: function() {
@@ -32,9 +35,3 @@ export default {
     components: components
 }
 </script>
-
-<style lang="sass?indentedSyntax" scoped>
-@import '../sass/main'
-
-</style>
-

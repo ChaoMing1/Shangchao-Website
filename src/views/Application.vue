@@ -121,10 +121,10 @@ export default {
                 color: $F
         .sixAdvantageModule
             h3
-                +fontStyle( $F-info, $F-title*1.5, $C-title )
+                +fontStyle( $F-info, $C-title, 1.5 )
                 +fW( bold )
             p
-                +fontStyle( $F-text, $F-text*1.5, $C-text )
+                +fontStyle( $F-text, $C-text, 1.5 )
 
 // 媒体查询 - 两大平台
 .mediaQuery--twoPlatformModule
@@ -200,9 +200,9 @@ export default {
             .moduleBox__iconImg >img
                 +imgCover( 15% )
             .moduleBox__info >h3
-                +fontStyle( $F-info, $F-info*2, $C-title )
+                +fontStyle( $F-info, $C-title, 2 )
             .moduleBox__info >p
-                +fontStyle( $F-text, $F-text*2, $C-title )
+                +fontStyle( $F-text, $C-title, 2 )
     @media only screen and ( min-width : 1024px )
         padding: 0 
 // 媒体查询 - 二十大行业解决方案( 唯一一个与 .moduleBox__content 同级的类 )
@@ -218,15 +218,15 @@ export default {
             // 边框样式
             +rowBorderAll( 20, 4, 1px, solid, $C-Intro-border )
             h3
-                +fontStyle( $F-text, $F-info, $C-title )
+                +fontStyle( $F-text, $C-title )
     @media only screen and ( min-width : 414px )
         .twentySolutionModule
             h3 
-                +fontStyle( $F-text*1.2, $F-info*1.2, $C-title )
+                +fontStyle( $F-info, $C-title, 2 )
     @media only screen and ( min-width : 768px )
         .twentySolutionModule
             h3 
-                +fontStyle( $F-title, $F-title*1.5, $C-title )
+                +fontStyle( $F-title, $C-title, 1.5 )
     @media only screen and ( min-width : 1024px )
         padding: 0 !important
         .twentySolutionModule
