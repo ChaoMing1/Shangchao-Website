@@ -165,22 +165,19 @@
     &:nth-child( #{$rowNum}n+1 )
         border-left: 1px solid $color
     
-// 边框样式计算样式( 参数： 全部数量， 列数， 边框 宽度 + 样式 + 颜色 )
-=rowBorderAll( $allNum, $rowNum, $borderWidth, $borderStyle, $borderColor )
+// 边框样式计算( 参数： 列数, 边框颜色, 边框宽度[缺省值=1px], 边框样式[缺省值=实线] )
+=rowBorderAll( $rowNum, $borderColor, $borderWidth: "1px", $borderStyle: "solid"  )
     $showBorder: #{$borderWidth} #{$borderStyle} #{$borderColor}
-
+    $selector: ('&:first-child')
     border:
-        top: none
         right: $showBorder
         bottom: $showBorder
-        left: none
-    &:first-child
+    &:nth-child( #{$rowNum}n+1 ), &:first-child
         border-left: $showBorder
     @for $i from 1 through $rowNum
-        &:nth-child( #{$i} )
-            border-top: $showBorder
-    &:nth-child( #{$rowNum}n+1 )
-        border-left: $showBorder
+        $selector: $selector, unquote(' &:nth-child( #{$i} ) ')
+    #{ $selector }
+        border-top: $showBorder
 
 // 新思路 - 未实践成功
 =rowTestA( $width, $border )

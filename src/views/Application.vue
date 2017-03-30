@@ -194,7 +194,7 @@ export default {
                 +imgCover( 10% )
     @media only screen and ( min-width : 640px )
         .sixAdvantageModule
-            +rowBorderAll( 6, 2, 1px, solid, $C-Intro-border )
+            +rowBorderAll( 2, $C-Intro-border )
             +REM-P( $M-contentMargin )
             width: 50% !important
             +REM( height, 120px )
@@ -217,7 +217,7 @@ export default {
             width: 25%
             +textCenter
             // 边框样式
-            +rowBorderAll( 20, 4, 1px, solid, $C-Intro-border )
+            +rowBorderAll( 4, $C-Intro-border )
             h3
                 +fontStyle( $F-text, $C-title )
     @media only screen and ( min-width : 414px )
@@ -233,6 +233,6 @@ export default {
         .twentySolutionModule
             width: 20%
             +REM( height, 100px )
-            +rowBorderAll( 20, 5, 1px, solid, $C-Intro-border )
+            +rowBorderAll( 5, $C-Intro-border )
 
 </style>

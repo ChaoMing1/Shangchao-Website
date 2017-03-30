@@ -164,8 +164,10 @@ export default {
             +pT( $M-padding*2 )
             height: 100%
             >h2
+                +fontStyle( $F-title, $C-title )
             .string
             >p
+                +fontStyle( $F-text, $C-text, 2.5 )
             >.btnBox
                 +ABS
                 +flexCenter
