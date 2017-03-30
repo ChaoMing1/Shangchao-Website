@@ -24,7 +24,7 @@ export default {
                     info                : 'aplusoffice@forevercj.com'
                 }, {
                     iconName            : 'map',
-                    info                : '山东省青岛市市南区华润大厦B座2408号'
+                    info                : '山东省青岛市市南区华润大厦B座2408室'
                 }
             ],
             input                      : '',
