@@ -13,8 +13,8 @@ export default {
         return {
             bannerBcImg: require('../../assets/img/banner.jpg')
         }
-    }
-    ,methods: {
+    },
+    methods: {
         toId( idName ) {
             location.href = '#' + idName
         }
@@ -67,7 +67,6 @@ export default {
 .whileColor
     color: $F
 .themeColor
-    // color: $C-theme // V1.1版本更改为白色, 加粗
     color: $F
     +fW( bold )
 </style>

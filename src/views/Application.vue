@@ -71,7 +71,6 @@ const components = { DetailAppBar, DetailBanner, TitleBox }
 
 export default {
     name: 'Application',
-    methods: {},
     data() {
         return {
             // 传递给 Banner组件( 通用 )的数据
@@ -99,8 +98,6 @@ export default {
 
 <style lang="sass?indentedSyntax" scoped>
 @import '../sass/main'
-
-#Application
 
 // 模块样式
 .moduleBox
@@ -205,7 +202,7 @@ export default {
             .moduleBox__info >p
                 +fontStyle( $F-text, $C-title, 2 )
     @media only screen and ( min-width : 1024px )
-        padding: 0 
+        padding: 0
 // 媒体查询 - 二十大行业解决方案( 唯一一个与 .moduleBox__content 同级的类 )
 .mediaQuery--twentySolutionModule
     @media only screen and ( min-width : 320px )
@@ -213,7 +210,7 @@ export default {
             left: $M-contentMargin !important
             right: $M-contentMargin !important
         .twentySolutionModule
-            +REM-padding-TB( $M-contentMargin ) 
+            +REM-padding-TB( $M-contentMargin )
             width: 25%
             +textCenter
             // 边框样式
@@ -222,11 +219,11 @@ export default {
                 +fontStyle( $F-text, $C-title )
     @media only screen and ( min-width : 414px )
         .twentySolutionModule
-            h3 
+            h3
                 +fontStyle( $F-info, $C-title, 2 )
     @media only screen and ( min-width : 768px )
         .twentySolutionModule
-            h3 
+            h3
                 +fontStyle( $F-title, $C-title, 1.5 )
     @media only screen and ( min-width : 1024px )
         padding: 0 !important
@@ -234,5 +231,4 @@ export default {
             width: 20%
             +REM( height, 100px )
             +rowBorderAll( 5, $C-Intro-border )
-
 </style>

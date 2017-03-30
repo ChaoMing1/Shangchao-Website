@@ -8,8 +8,8 @@ Vue.use( Vuex );
 
 // 状态树
 const state = {
-    anchorName: '',             // 跳转锚点 name
-    viewUrlState: 'Home'     // 当前页面的路由状态( 如: 首页时, 状态Url为 Home )
+    anchorName: '',
+    viewUrlState: 'Home'
 };
 
 const store = new Vuex.Store({

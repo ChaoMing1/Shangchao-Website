@@ -47,7 +47,6 @@ const components = { TitleBox, AppBar, Banner, MapView, ContactUs, AboutUs, Serv
 
 export default {
     name: 'Home',
-    methods: {},
     data() {
         return {
             aboutUsModule: aboutUsObj,
@@ -65,8 +64,3 @@ export default {
     components: components
 }
 </script>
-
-<style lang="sass?indentedSyntax" scoped>
-@import '../sass/main'
-
-</style>

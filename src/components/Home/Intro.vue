@@ -10,7 +10,6 @@
 
         div( v-for="item in introArr" v-if="activeTab === item.tabName" )
             TableOnly( v-bind:TableArr = "item.itemArr" )
-
 </template>
 
 <script>

@@ -1,7 +1,6 @@
 <template lang="pug">
 #ContactUs
     mu-row( gutter )
-        // 联系信息
         mu-col( class="contactUs--box contactUs--contactInfo" width="100" tablet="100" desktop="100" )
             .contactInfo--item( v-for=" item in contactUsArr " )
                 .contactInfo--text

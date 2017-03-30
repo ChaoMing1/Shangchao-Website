@@ -1,16 +1,15 @@
 import Vue                  from 'vue';
 import Router               from 'vue-router';
-import Home                 from '@/views/Home';                    // 首页
-import Application          from '@/views/Application';             // APP应用
-import BigData              from '@/views/BigData';                 // 大数据
-import ECommerce            from '@/views/ECommerce';               // 电子商务
-import SystemIntegration    from '@/views/SystemIntegration';       // 系统集成
+import Home                 from '@/views/Home';
+import Application          from '@/views/Application';
+import BigData              from '@/views/BigData';
+import ECommerce            from '@/views/ECommerce';
+import SystemIntegration    from '@/views/SystemIntegration';
 
 Vue.use( Router );
 
 
 export default new Router({
-    // mode: 'history',
     routes: [
         {
             path: '/',

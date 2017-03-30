@@ -4,7 +4,6 @@
     .TableRender__box( v-for="item in TableRenderArr" )
         .TableRender__box--title( v-bind:style="{ color: item.leftBorderColor }" )
             h3 {{ item.title }}
-
         // 渲染表格组件
         TableOnly( v-bind:TableArr = "item.itemArr" )
 </template>
@@ -30,8 +29,8 @@ export default {
     .TableRender__box
         // 版块标题
         .TableRender__box--title
-            border-left: 
-                width: 5px 
+            border-left:
+                width: 5px
                 style: solid
             >h3
                 +titleStyle( $C-theme )

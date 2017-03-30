@@ -15,9 +15,9 @@ export default {
     methods: {
         // 目的: 根据 $store传回的 锚点名称 进行滚动
         moveScrollTop() {
-            let anchorName  = this.$store.state.anchorName,                 // 首先保存 $store中锚点的名称
-                anchorObj   = document.querySelector( "#" + anchorName )    // 检索这个节点对象
-            document.body.scrollTop = anchorObj.offsetTop                   // 执行跳转
+            let anchorName  = this.$store.state.anchorName,                 // 保存 $store中锚点名
+                anchorObj   = document.querySelector( "#" + anchorName )
+            document.body.scrollTop = anchorObj.offsetTop
         },
         // 目的: 监听屏幕滚动
         watchScrollY() {
@@ -26,16 +26,15 @@ export default {
                     mobileAppbar    = document.querySelector('#mobile--appbar'),
                     pcAppBar        = document.querySelector('#pc--header'),
                     viewUrlState    = this.$store.state.viewUrlState
-
                 // 当yValue值为0时. 触发一个事件 -> 更改 PC端 AppBar 样式类, 改变样式
                 if( yValue === 0 ) {
                     // 判断页面状态: 如果是 'Home' -> 执行 首页导航滚动监听事件
                     if( viewUrlState === 'Home' ) {
-                        this.$data.Home.viewState = ''                                      // 重置 $data内 首页滚动状态
-                        this.changeNavStyle( 1 )                                            // 改变导航按钮样式( 初始状态 - HOME )
+                        this.$data.Home.viewState = ''
+                        this.changeNavStyle( 1 )
                     } // 非首页的情况 -> 无处理
-                    mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1' )        // 导航改回透明样式( 移动端导航栏未添加, 所以报错 )
-                    pcAppBar.setAttribute( 'class', 'pc-header' )                       // 上同
+                    mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1' )
+                    pcAppBar.setAttribute( 'class', 'pc-header' )
                 } else {
                     // 判断页面状态: 如果是 'Home' -> 执行 首页导航滚动监听事件
                     if( viewUrlState === 'Home' ) {
@@ -55,9 +54,8 @@ export default {
                         } else if( yValue>=7300 ) {
                             this.cacheMethodsState( '联系我们', 8 )
                         }
-
-                    } // 非首页的情况 -> 无处理
-                    mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1 moveViewStyle' )  // 导航改回透明样式( 移动端导航栏未添加, 所以报错 )
+                    }
+                    mobileAppbar.setAttribute( 'class', 'mu-appbar mu-paper-1 moveViewStyle' )
                     pcAppBar.setAttribute( 'class', 'pc-header moveViewStyle-PC' )
                 }
             }
@@ -66,14 +64,14 @@ export default {
         cacheMethodsState(HomeModuleName, HomeNavBtn) {
             let saveViewState = this.$data.Home.viewState           // 保存 $data 中 首页滚动状态
             if( HomeModuleName != saveViewState ) {                 // 如果: 缓存状态 与 $data状态不同 -> 版块发生改变
-                this.changeNavStyle( HomeNavBtn )                   // console.log('版块发生改变, 修改 $data值')
-                this.$data.Home.viewState = HomeModuleName          // 将 当前的模块名称存入 $data中
+                this.changeNavStyle( HomeNavBtn )
+                this.$data.Home.viewState = HomeModuleName
             }
         },
         // 目的: 改变导航样式
         changeNavStyle(HomeNavBtn) {
             let btnArr = document.getElementsByClassName('mu-buttom-item')
-            for( let i = 0; i < btnArr.length; i++ ) {                                              // 清空class
+            for( let i = 0; i < btnArr.length; i++ ) {
                 btnArr[i].setAttribute( 'class', 'mu-buttom-item' )
             }
             btnArr[HomeNavBtn - 1].setAttribute( 'class', 'mu-buttom-item mu-bottom-item-active' )

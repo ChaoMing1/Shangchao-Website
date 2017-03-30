@@ -1,6 +1,6 @@
 // 保存锚点信息
 export const SET_ANCHOR_NAME = ( state, res ) => {
-    state.anchorName = res;                                                                             // 将数组直接赋给state
+    state.anchorName = res;
 };
 
 // 保存页面( 详情页 )的路由地址

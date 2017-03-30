@@ -222,15 +222,15 @@ export default {
                         +fS( $F-text )
                         +lH( $F-title )
                         @extend %justify
-        &:last-child 
+        &:last-child
             >div .works--box--textContent .flexbox>p
-                +textCenter 
-    
+                +textCenter
+
     @media only screen and ( min-width : 768px )
         .works--box >div
             +REM( height, 250px )
             .works--box--textContent .flexbox > h3
-                +fS( $F-title )       
+                +fS( $F-title )
             .works--box--textContent .flexbox > p
                 +fS( $F-info )
                 +ell-line( $F-title*1.5, 7 )
@@ -239,7 +239,5 @@ export default {
             flex-direction: column
             height: 720px
             .works--box
-                width: 50% !important          
-                            
-                    
+                width: 50% !important
 </style>

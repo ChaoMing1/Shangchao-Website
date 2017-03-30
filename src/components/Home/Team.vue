@@ -30,11 +30,11 @@ export default {
     data() {
         return {
             teamLeft: {
-                img         : require('../../assets/img/group-14.png')
-                ,text       : `我们深刻理解国际前沿设计趋势、对流程的互联网站点和软件应用有深刻认识、
+                img        : require('../../assets/img/group-14.png'),
+                text       : `我们深刻理解国际前沿设计趋势、对流程的互联网站点和软件应用有深刻认识、
                                 在开发领域有着雄厚技术与实战经验。”`
-            }
-            ,teamRight: {
+            },
+            teamRight: {
                 img_A       : require('../../assets/img/group-17.png'),
                 img_B       : require('../../assets/img/group-16.png'),
                 img_C       : require('../../assets/img/group-16@3x.png'),      // V1.1 版本新加
@@ -49,8 +49,8 @@ export default {
                 ],
                 text        : `我们深刻理解国际前沿设计趋势、对流程的互联网站点和软件应用有深刻认识、
                                 在开发领域有着雄厚技术与实战经验。”`
-            }
-            ,iconImg: require('../../assets/img/ico-quotation@3x.png')
+            },
+            iconImg: require('../../assets/img/ico-quotation@3x.png')
         }
     }
 }
@@ -67,7 +67,6 @@ export default {
 
 #Team
     +global-maxWidth
-
     // 通用样式
     .teamBox
         @media only screen and ( min-width : 768px )
@@ -75,19 +74,13 @@ export default {
         >img
             +block
         .teamBox--text
-            // +REM( padding, $M-padding )  // V1.1版本去除文字
             padding: 0
             +bC( $C-L-sub-theme )
             .teamBox--iconImg
-                // +REM-W-H( $F-title, $F-title )
-                // +REM( margin-bottom, $M-contentMargin )
-                // >img
-                //     +imgCover( 30% )
             >p
                 +REM( font-size, $F-text )
                 +REM( line-height, $F-title )
                 color: $F
-
     // 独立样式
     .teamLeft
         >img
@@ -121,9 +114,6 @@ export default {
                 +ABS
                 +team-PC-style
                 right: 0
-                
-
-
 .teamRight
     .teamRight--mobile
         @media only screen and ( min-width : 320px )
@@ -140,7 +130,7 @@ export default {
             +dNone
         @media only screen and ( min-width : 768px )
             +block
-            height: 600px       // 控制最大高度
+            height: 600px
             .teamBox--text
                 +block
                 height: 45%
@@ -155,5 +145,5 @@ export default {
             .teamBox--text
                 height: 55%
             .teamRight--PC--imgBox
-                height: 45% 
+                height: 45%
 </style>

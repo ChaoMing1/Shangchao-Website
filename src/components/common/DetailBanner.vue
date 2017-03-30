@@ -46,11 +46,10 @@ export default {
     +flexCenter
     +W100
     +bC( $C-L-theme )
-    .banner--title                                  
-        >h2                                         
+    .banner--title
+        >h2
             +block
-            
-        
+
 // 公用样式
 .whileColor
     color: $F

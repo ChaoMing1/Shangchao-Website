@@ -87,7 +87,7 @@ export default {
     // PC端
     .pc-header      // PC端 样式
         @media only screen and ( min-width : 320px )
-            display: none                               // 移动端 - 隐藏
+            display: none
         @media only screen and ( min-width : 1080px )
             position: fixed
             +block
