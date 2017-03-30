@@ -1,7 +1,11 @@
 <template lang="pug">
 #Service
     mu-row( gutter )
-        mu-col( v-for="item in serviceArr" class="serviceBox" width="100" tablet="50" desktop="20" v-bind:key="item.title" )
+        mu-col( 
+            v-for="item in serviceArr" v-bind:key="item.title"
+            class="serviceBox mediaQuery--serviceBox" 
+            width="100" tablet="50" desktop="20"
+        )
             div
                 .imgBox
                     img( v-bind:src=" item.img " )
@@ -106,6 +110,8 @@ export default {
 
 #Service
     +moduleBoxStyle
+    padding: 0
+    +global-maxWidth
     .serviceBox
         +flexCenter
         +textCenter
@@ -118,20 +124,6 @@ export default {
                 +REM-W-H( 30px, 30px )
                 >img
                     +imgCover( 100% )
-            h2
-                +REM( font-size, $F-title*.7 )
-                +REM( padding-top, $M-contentMargin )
-                +REM( padding-bottom, $M-contentMargin )
-            .string
-                @extend %dib
-                width: 30%
-                +REM( height, 2px )
-                +REM( margin-bottom, $M-contentMargin )
-                +bC( $C-theme )
-            p
-                +REM( font-size, $F-text*.6 )
-                +REM( line-height, $F-title )
-                color: $C-text
             // "查看详情" 按钮
             .demo-flat-button
                 +ellipseBtn( 30px )
@@ -146,23 +138,37 @@ export default {
                     border-color: $C-theme
                     +bC( $C-theme )
                     color: $F
-        @media only screen and ( min-width : 768px )
-            height: 360px
-        @media only screen and ( min-width : 1024px )
-            height: 460px
-            >div
-                +REL
-                +pT( $M-padding*2 )
-                height: 100%
-                >.btnBox
-                    +ABS
-                    +flexCenter
-                    bottom: 0
-                    +W100
+                
+
+// 媒体查询 
+.mediaQuery--serviceBox
+    @media only screen and ( min-width : 320px )
+        >div
+            >h2
+                +REM-fontStyle( $F-title, $C-title )
+                +REM-padding-TB( $M-contentMargin )
+            .string
+                +dib
+                width: 30%
+                +REM( height, 2px )
+                +REM( margin-bottom, $M-contentMargin )
+                +bC( $C-theme )
+            >p
+                +REM-fontStyle( $F-text, $C-text, 2.5 )
+    @media only screen and ( min-width : 768px )
+        height: 360px
     @media only screen and ( min-width : 1180px )
-        max-width: 1180px
-        margin: 0 auto
-        padding:
-            left: 0
-            right: 0
+        height: 460px
+        >div
+            +REL
+            +pT( $M-padding*2 )
+            height: 100%
+            >h2
+            .string
+            >p
+            >.btnBox
+                +ABS
+                +flexCenter
+                bottom: 0
+                +W100
 </style>

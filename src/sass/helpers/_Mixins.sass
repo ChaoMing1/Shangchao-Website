@@ -27,11 +27,18 @@
     font-weight: $fontWeight
 =lH( $lineHeight )
     line-height: $lineHeight
-// 文字通用混合 ( 参数说明: 字体字号, 字体颜色, 行高[ 缺省值为字号的1.2倍 ] )
+
+// 文字通用混合 ( 参数说明: 字体字号, 字体颜色, 行高[ 缺省值为字号的1.2倍 ] ) ———— 适用于 PC端
 =fontStyle( $fontSize, $fontColor, $lineMultiple: 1.2 )
     font-size: $fontSize
     color: $fontColor
     line-height: $fontSize * $lineMultiple
+
+// 功能与参数 与上面基本相同 ———— 适用于移动端
+=REM-fontStyle( $fontSize, $fontColor, $lineMultiple: 1.2 )
+    +REM( font-size, $fontSize )
+    color: $fontColor
+    +REM( line-height, $fontSize * $lineMultiple )
 
 // CSS框模型/内边距
 =pB( $paddingBottom )
