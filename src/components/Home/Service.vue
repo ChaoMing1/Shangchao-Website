@@ -157,8 +157,8 @@ export default {
                 +REM-fontStyle( $F-text, $C-text, 2.5 )
     @media only screen and ( min-width : 768px )
         height: 360px
-    @media only screen and ( min-width : 1180px )
-        height: 460px
+    @media only screen and ( min-width : 1024px )
+        height: 500px
         >div
             +REL
             +pT( $M-padding*2 )

@@ -77,6 +77,6 @@ export default {
             padding:
                 top: 0
                 bottom: 0
-        @media only screen and ( min-width : 1024px )
+        @media only screen and ( min-width : 1180px )
             +pL( 0 )
 </style>

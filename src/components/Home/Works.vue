@@ -234,7 +234,7 @@ export default {
             .works--box--textContent .flexbox > p
                 +fS( $F-info )
                 +ell-line( $F-title*1.5, 7 )
-    @media only screen and ( min-width : 1180px )
+    @media only screen and ( min-width : 1024px )
         .row
             flex-direction: column
             height: 720px

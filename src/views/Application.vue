@@ -106,6 +106,10 @@ export default {
     .moduleBox__content
         margin: 0 auto
         max-width: 1180px
+        @media only screen and ( min-width : 1024px )
+            padding: $M-contentMargin
+        @media only screen and ( min-width : 1180px )
+            padding: 0
         .twoPlatformModule
             +REM-margin-TB( $M-contentMargin )
             .moduleBox__iconImg
@@ -118,6 +122,15 @@ export default {
             h3
                 color: $F
         .sixAdvantageModule
+            +REM-padding-TB( $M-contentMargin )
+            @media only screen and ( min-width : 320px )
+                border-bottom: 1px solid $C-Intro-border
+                &:last-child
+                    border-bottom: 0
+            @media only screen and ( min-width : 1024px )
+                +rowBorderAll( 2, $C-Intro-border )
+                &:last-child
+                    border-bottom: 1px solid $C-Intro-border
             h3
                 +fontStyle( $F-info, $C-title, 1.5 )
                 +fW( bold )
@@ -188,7 +201,11 @@ export default {
         +REM( padding, $M-contentMargin )
         .sixAdvantageModule
             .moduleBox__iconImg >img
-                +imgCover( 10% )
+                +imgCover( 20% )
+            .moduleBox__info >h3
+                +fontStyle( $F-info, $C-title, 2 )
+            .moduleBox__info >p
+                +fontStyle( $F-text, $C-title, 3 )
     @media only screen and ( min-width : 640px )
         .sixAdvantageModule
             +rowBorderAll( 2, $C-Intro-border )

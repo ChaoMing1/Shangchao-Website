@@ -38,7 +38,7 @@ export default {
                 +imgCover( 30% )
             >h4
                 +block
-                +fS( $F-text ) 
+                +fontStyle( $F-text, $C-text )
                 +fW( normal )
     // 与 TableOnly--itemBox 类名 同级( 目的: 配置表格一行的样式, 如5行时, 设置第一行第五列的上边框为1px; 依此类推 )
     .row3

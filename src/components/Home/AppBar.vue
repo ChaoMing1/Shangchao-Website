@@ -102,7 +102,7 @@ export default {
                 .mobile--title
                     font-size: $F-text
                 .right
-        @media only screen and ( min-width : 1024px )
+        @media only screen and ( min-width : 1180px )
             display: none
 
     // PC - header
