@@ -58,15 +58,15 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 * 2017.3.31
     > 修复移动端 系统文字禁止放大问题( 未测试 ) —— 小米手机 系统文字放大造成页面结构错误, 字体超出结构
-
+    >
     > 优化头部`meta`标签 - 已加注释说明
-
+    >
     > 添加离线情况下的网页图标 - 改为'上朝科技'正式图标; 删除'A+office'图标
-
+    >
     > 优化 'APP'详情页 - '六大服务' 文字样式( 移动端 )
-
+    >
     > 重构 'ContactUs' 联系我们 组件
-
+    >
     > 完全支持 iPad Pro的 `1024`像素效果, 并完成测试( chrome模拟 )
 
     

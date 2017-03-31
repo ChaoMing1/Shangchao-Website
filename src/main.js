@@ -38,20 +38,20 @@ new Vue({
  * 但是会有一个1秒左右的延迟，期间可以考虑通过loading展示  
  * 仅供参考  
  */
-(function(){
-    if (typeof(WeixinJSBridge) == 'undefined') {  
-        document.addEventListener('WeixinJSBridgeReady', function ( e ) {  
-            setTimeout(function(){  
-                WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize': 0 }, function( res ) {  
-                    // alert(JSON.stringify(res));  
-                });  
-            },0);  
-        });  
-    } else {  
-        setTimeout(function(){  
-            WeixinJSBridge.invoke('setFontSizeCallback',{ 'fontSize': 0 }, function( res ) {  
-                // alert(JSON.stringify(res));  
-            });  
-        },0);  
-    }  
-})();
+// (function(){
+//     if (typeof(WeixinJSBridge) == 'undefined') {  
+//         document.addEventListener('WeixinJSBridgeReady', function ( e ) {  
+//             setTimeout(function(){  
+//                 WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize': 0 }, function( res ) {  
+//                     // alert(JSON.stringify(res));  
+//                 });  
+//             },0);  
+//         });  
+//     } else {  
+//         setTimeout(function(){  
+//             WeixinJSBridge.invoke('setFontSizeCallback',{ 'fontSize': 0 }, function( res ) {  
+//                 // alert(JSON.stringify(res));  
+//             });  
+//         },0);  
+//     }  
+// })();
