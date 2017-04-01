@@ -69,4 +69,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
     >
     > 完全支持 iPad Pro的 `1024`像素效果, 并完成测试( chrome模拟 )
 
+* 2017.4.1
+    > 修复上一版本 在移动端下, 页面显示错误( 修复`meta`错误 )
+    >
+    > 通过[压缩网站](http://compresspng.com/zh/) 再次压缩图片( `bg.png`已压缩到极限, 无法再压缩 )
+
     
