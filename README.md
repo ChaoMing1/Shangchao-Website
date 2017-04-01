@@ -1,4 +1,4 @@
-# 上朝科技官网
+# 青岛上朝科技 官网
 
 > 本页面需要在服务器环境下访问( 可使用 `yarn run dev( npm run dev )` 预览 ), 勿直接浏览静态页面
 
@@ -51,6 +51,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [x]  添加 '1024px'像素 页面适配 —— 适配 iPad Pro页面
 - [x]  优化 'APP'详情页 - '六大服务' 文字样式( 移动端 )
 - [ ]  移动端下, 大部分详情页返回首页出现跳转错误( 跳到页面底部 )
+- [ ]  使用[滚动到元素的VueJS指令 - 屏幕滚动插件](https://github.com/rigor789/vue-scrollTo), 添加一个'回到顶部'的功能键
+- [ ]  使用[图片懒加载插件](https://github.com/JALBAA/vue-lazyload-img)
+- [ ]  添加'联系电话'的浮动按钮, 触发事件 -> 展示联系电话
+- [ ]  将首页 - '服务简介' 模块的桌面样式  添加参考图( 修改展示样式为 表格下展示 )
 
 *** 
 
