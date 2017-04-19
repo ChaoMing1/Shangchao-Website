@@ -55,8 +55,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ]  使用[图片懒加载插件](https://github.com/JALBAA/vue-lazyload-img)
 - [ ]  添加'联系电话'的浮动按钮, 触发事件 -> 展示联系电话
 - [ ]  将首页 - '服务简介' 模块的桌面样式  添加参考图( 修改展示样式为 表格下展示 )
+- [ ]  光纤环境下 - 加载速度已到**11m**, 须做图片优化 与 性能优化
 
-*** 
+***
 
 ## **优化修改记录**
 
@@ -78,4 +79,3 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
     >
     > 通过[压缩网站](http://compresspng.com/zh/) 再次压缩图片( `bg.png`已压缩到极限, 无法再压缩 )
 
-    
